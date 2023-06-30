@@ -24,25 +24,25 @@ export class AppComponent {
   }
 
 
-  setDefaultColor() {
+  setDefaultColor(): void {
     this.firstColor= 'gray';
     this.secondColor = 'gray';
     this.thirdColor = 'gray';
   }
 
-  setColorStrong() {
+  setColorStrong(): void {
     this.firstColor = 'green';
     this.secondColor = 'green';
     this.thirdColor = 'green';
   }
 
-  setColorMedium() {
+  setColorMedium(): void {
     this.firstColor = 'yellow';
     this.secondColor = 'yellow';
     this.thirdColor = 'gray';
   }
 
-  setColorHard() {
+  setColorHard(): void {
     this.firstColor = 'red';
     this.secondColor = 'gray';
     this.thirdColor = 'gray';
