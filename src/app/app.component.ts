@@ -20,6 +20,8 @@ export class AppComponent {
       } else {
         this.setColorHard(); //Weak Password
       }
+    } else if (this.inputValue.length > 0) {
+      this.setColorUnderWeak();
     }
   }
 
@@ -29,7 +31,11 @@ export class AppComponent {
     this.secondColor = 'gray';
     this.thirdColor = 'gray';
   }
-
+  setColorUnderWeak(): void {
+    this.firstColor = 'red';
+    this.secondColor = 'red';
+    this.thirdColor = 'red';
+  }
   setColorStrong(): void {
     this.firstColor = 'green';
     this.secondColor = 'green';
