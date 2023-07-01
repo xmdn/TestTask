@@ -16,28 +16,21 @@ import { PasswordService } from './password.service';
     })
 
 export class ValidationPasswordFormComponent implements ControlValueAccessor {
-
     passwordValue: string = '';
     element: string[] = ['gray', 'gray', 'gray'];
-
     onChange = (_: any):void => {};
     onTouched = ():void => {};
-
     constructor(private passwordService: PasswordService) {}
-
     writeValue(value: string): void {
         this.passwordValue = value;
         this.passwordValidation();
     }
-
     registerOnChange(fn: any): void {
         this.onChange = fn;
       }
-
     registerOnTouched(fn: any): void {
       this.onTouched = fn;
     }
-
     passwordValidation(): void {
       this.element = this.passwordService.validatePassword(this.passwordValue);
       this.onChange(this.passwordValue);
