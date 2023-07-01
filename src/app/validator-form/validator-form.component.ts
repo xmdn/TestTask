@@ -20,8 +20,8 @@ export class ValidationPasswordFormComponent implements ControlValueAccessor {
 
     element: string[] = ['gray', 'gray', 'gray'];
 
-    onChange = (_: any) => {};
-    onTouched = () => {};
+    onChange = (_: any):void => {};
+    onTouched = ():void => {};
 
     writeValue(value: string): void {
         this.passwordValue = value;
@@ -44,9 +44,9 @@ export class ValidationPasswordFormComponent implements ControlValueAccessor {
         const hasSymbols = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(this.passwordValue);
 
         // Logical variables for current state of passwordValue
-        const isBlank = this.passwordValue.length === 0;
-        const isNotZero = this.passwordValue.length !== 0;
-        const isLess8chars = this.passwordValue.length < 8;
+        const isBlank: boolean = this.passwordValue.length === 0;
+        const isNotZero: boolean = this.passwordValue.length !== 0;
+        const isLess8chars: boolean = this.passwordValue.length < 8;
 
         // ComplexityLevel
         const complexityLevel = (hasLetters ? 1 : 0) + (hasNumbers ? 1 : 0) + (hasSymbols ? 1 : 0);
@@ -93,7 +93,7 @@ export class ValidationPasswordFormComponent implements ControlValueAccessor {
 
       }
       // On every change calling function
-      onPasswordChange(event: any) {
+      onPasswordChange(event: any): void {
         this.passwordValue = event.target.value;
         this.passwordValidation();
       }
