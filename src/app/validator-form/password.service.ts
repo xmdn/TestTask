@@ -12,17 +12,13 @@ export class PasswordService {
     const hasSymbols = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(passwordValue);
 
     // Logical variables for current state of passwordValue
-    const isBlank: boolean = passwordValue.length === 0;
     const isNotZero: boolean = passwordValue.length !== 0;
     const isLess8chars: boolean = passwordValue.length < 8;
 
     // ComplexityLevel
     const complexityLevel = (hasLetters ? 1 : 0) + (hasNumbers ? 1 : 0) + (hasSymbols ? 1 : 0);
 
-    if (isBlank) {
-      return ['gray', 'gray', 'gray'];
-
-    } else if (isLess8chars && isNotZero){
+    if (isLess8chars && isNotZero){
       return ['red', 'red', 'red'];
 
     } else {

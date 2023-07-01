@@ -38,7 +38,7 @@ export class ValidationPasswordFormComponent implements ControlValueAccessor {
       this.onTouched = fn;
     }
 
-    passwordValidation() {
+    passwordValidation(): void {
       this.element = this.passwordService.validatePassword(this.passwordValue);
       this.onChange(this.passwordValue);
       }
