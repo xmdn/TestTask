@@ -1,9 +1,6 @@
 <form class="main">
-    <label for="passwordValue">Password: </label>
-    <input type="text"  id="password" name="password" [(ngModel)]="passwordValue" (input)="passwordValidation()">
+    <input type="text"  id="password" name="password" [(ngModel)]="passwordValue" (input)="passwordValidation()" placeholder="Enter a password">
     <div class="pass-strength">
-        <div class="indicator" [ngStyle]="{'background-color': element[0]}"></div>
-        <div class="indicator" [ngStyle]="{'background-color': element[1]}"></div>
-        <div class="indicator" [ngStyle]="{'background-color': element[2]}"></div>
+        <div class="indicator" *ngFor="let el of element" [ngStyle]="{'background-color': el}"></div>
     </div>
 </form>
