@@ -18,9 +18,6 @@ export class ValidationPasswordFormComponent implements ControlValueAccessor {
 
     passwordValue: string = '';
 
-    isWeak: boolean = false;
-    isMedium: boolean = false;
-    isStrong: boolean = false;
 
     first: string = 'gray';
     second: string = 'gray';
