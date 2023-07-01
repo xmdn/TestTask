@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 })
 export class PasswordService {
   constructor() { }
-
   validatePassword(passwordValue: string): string[] {
     // Variables of validation based on complexity
     const hasLetters = /[a-zA-Z]/.test(passwordValue);
@@ -17,7 +16,6 @@ export class PasswordService {
     const complexityLevel = (hasLetters ? 1 : 0) + (hasNumbers ? 1 : 0) + (hasSymbols ? 1 : 0);
     if (isLess8chars && isNotZero){
       return ['red', 'red', 'red'];
-
     } else {
       // Receiving numbers for level strength estimating
       switch (complexityLevel) {
