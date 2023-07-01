@@ -18,10 +18,7 @@ export class ValidationPasswordFormComponent implements ControlValueAccessor {
 
     passwordValue: string = '';
 
-
-    first: string = 'gray';
-    second: string = 'gray';
-    third: string = 'gray';
+    element: string[] = ['gray', 'gray', 'gray'];
 
     onChange = (_: any) => {};
     onTouched = () => {};
@@ -34,7 +31,7 @@ export class ValidationPasswordFormComponent implements ControlValueAccessor {
     registerOnChange(fn: any): void {
         this.onChange = fn;
       }
-    
+
     registerOnTouched(fn: any): void {
       this.onTouched = fn;
     }
@@ -50,60 +47,50 @@ export class ValidationPasswordFormComponent implements ControlValueAccessor {
         const isBlank = this.passwordValue.length === 0;
         const isNotZero = this.passwordValue.length !== 0;
         const isLess8chars = this.passwordValue.length < 8;
-    
-        // ComplexityLevel 
+
+        // ComplexityLevel
         const complexityLevel = (hasLetters ? 1 : 0) + (hasNumbers ? 1 : 0) + (hasSymbols ? 1 : 0);
-    
+
         if (isBlank) {
 
-          this.first = 'gray';
-          this.second = 'gray';
-          this.third = 'gray';
+          this.element = ['gray', 'gray', 'gray'];
           this.onChange('');
 
           return;
         } else if (isLess8chars && isNotZero){
 
-          this.first = 'red';
-          this.second = 'red';
-          this.third = 'red';
+          this.element = ['red', 'red', 'red'];
           this.onChange('');
-    
+
           return;
         } else {
 
-          // Recieving numbers for level strength estimating
+          // Receiving numbers for level strength estimating
           switch (complexityLevel) {
 
             // Weak level
             case 1:
 
-              this.first = 'red';
-              this.second = 'gray';
-              this.third = 'gray';
+              this.element = ['red', 'gray', 'gray'];
               this.onChange(this.passwordValue);
               return;
 
             // Medium level
             case 2:
 
-              this.first = 'yellow';
-              this.second = 'yellow';
-              this.third = 'gray';
+              this.element = ['yellow', 'yellow', 'gray'];
               this.onChange(this.passwordValue);
               return;
 
             // Strong level
             case 3:
 
-              this.first = 'green';
-              this.second = 'green';
-              this.third = 'green';
+              this.element = ['green', 'green', 'green'];
               this.onChange(this.passwordValue);
               return;
           }
         }
-   
+
       }
       // On every change calling function
       onPasswordChange(event: any) {
