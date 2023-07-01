@@ -1,65 +1,8 @@
-<style>
-  :host {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    font-size: 14px;
-    color: #333;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  .gitrepo {
-    position: absolute;
-    bottom: 5%;
-  }
-  a,
-  a:visited,
-  a:hover {
-    color: #1976d2;
-    text-decoration: none;
-  }
-
-  a:hover {
-    color: #125699;
-  }
-
-  .main {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .indicator {
-    color: #888888;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-
-  .container {
-    position: absolute;
-    margin-top: 60px;
-    display: flex;
-  }
-
-</style>
-
-<div>
-  <div class="main">
-    <input type="text" [(ngModel)]="inputValue" (input)="handleInputChange()" placeholder="Enter a password" />
-    <div class="container">
-      <div class="indicator" [ngStyle]="{ 'background-color': firstColor }"></div>
-      <div class="indicator" [ngStyle]="{ 'background-color': secondColor }"></div>
-      <div class="indicator" [ngStyle]="{ 'background-color': thirdColor }"></div>
-    </div>
-  </div>
-  <footer>
+  <app-validator-form></app-validator-form>
+  <footer class="footer">
    <div class="gitrepo">
-                       <h4>Andrii Bilyk</h4>
+                       <h3>Andrii Bilyk</h3>
       <a href="https://github.com/xmdn/TestTask" target="_blank" rel="noopener"> Give my repo a star 😉
       </a>
   </div>
   </footer>
-
-</div>
