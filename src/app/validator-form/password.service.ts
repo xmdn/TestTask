@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PasswordService {
-  constructor() { }
   validatePassword(passwordValue: string): string[] {
     // Variables of validation based on complexity
     const hasLetters = /[a-zA-Z]/.test(passwordValue);
